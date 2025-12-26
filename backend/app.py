@@ -31,7 +31,7 @@ FEATURE_NAMES = [
 def api_predict():
     try:
         data = request.get_json()
-        print("Incoming JSON:", data)
+        # print("Incoming JSON:", data)
 
         features = np.array([[
             float(data["age"]),
@@ -47,7 +47,7 @@ def api_predict():
             int(data["active"])
         ]])
 
-        print("Features =", features)
+        # print("Features =", features)
 
         df = pd.DataFrame(features, columns=FEATURE_NAMES)
 
@@ -69,7 +69,7 @@ def api_predict():
         }), 200
 
     except Exception as e:
-        print("❌ ERROR OCCURRED:", e)
+        # print("❌ ERROR OCCURRED:", e)
         return jsonify({
             "error": str(e)
         }), 500
