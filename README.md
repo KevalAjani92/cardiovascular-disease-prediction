@@ -10,8 +10,8 @@ This project predicts the risk of cardiovascular disease using Machine Learning.
 - Deployment: Netlify (Frontend), Render (Backend)
 
 ## 🚀 Live Demo
-Frontend: https://cardio-prediction.netlify.app  
-Backend API: https://cardio-api.onrender.com
+Frontend: https://cardio-prediction-ak92.netlify.app/  
+Backend API: https://cardiovascular-disease-prediction-jkcw.onrender.com/
 
 ## 📊 Features Used
 - Age
