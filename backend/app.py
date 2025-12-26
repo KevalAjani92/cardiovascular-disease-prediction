@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-pipeline = pickle.load(open("cardio_pipeline.pkl", "rb"))
+pipeline = pickle.load(open("model/cardio_pipeline.pkl", "rb"))
 
 FEATURE_NAMES = [
     "age_years",
