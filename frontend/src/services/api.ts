@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.API_BASE_URL || 'http://127.0.0.1:5000/api';
+const API_BASE_URL = 'https://cardiovascular-disease-prediction-jkcw.onrender.com';
 
 export interface PredictionInput {
   age: number;
@@ -29,7 +29,7 @@ export const predictCardiovascularDisease = async (
   try {
     console.log(data);
     
-    const response = await axios.post<PredictionResult>(`${API_BASE_URL}/predict`, data);
+    const response = await axios.post<PredictionResult>(`${API_BASE_URL}/api/predict`, data);
     console.log(response.data);    
     return response.data;
   } catch (error) {
