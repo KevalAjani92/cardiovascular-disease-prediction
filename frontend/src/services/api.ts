@@ -23,6 +23,38 @@ export interface PredictionResult {
   bmi: number;
 }
 
+export interface ConfusionMatrix {
+  tn: number;
+  fp: number;
+  fn: number;
+  tp: number;
+}
+
+export interface ModelMetricsResult {
+  algorithm: string;
+  accuracy: number;
+  precision: number;
+  recall: number;
+  f1_score: number;
+  roc_auc: number;
+  confusion_matrix: ConfusionMatrix;
+}
+
+// Fetch model metrics from the backend API
+export const fetchModelMetrics = async (): Promise<ModelMetricsResult> => {
+  try {
+    const response = await axios.get<ModelMetricsResult>(`${API_BASE_URL}/api/model-metrics`);
+    return response.data;
+  } catch (error) {
+    console.error(error.response?.data || error.message);
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data?.error || 'Failed to fetch model metrics');
+    }
+    throw error;
+  }
+};
+
+// Send prediction request to the backend API
 export const predictCardiovascularDisease = async (
   data: PredictionInput
 ): Promise<PredictionResult> => {

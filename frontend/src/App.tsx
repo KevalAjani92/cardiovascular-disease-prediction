@@ -7,10 +7,12 @@ import Result from './pages/Result';
 // import History from './pages/History';
 import ModelInfo from './pages/ModelInfo';
 import Contact from './pages/Contact';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <MainLayout>
         <Routes>
           <Route path="/" element={<Landing />} />
