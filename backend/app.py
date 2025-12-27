@@ -75,5 +75,29 @@ def api_predict():
         }), 500
 
 
+@app.route("/api/model-metrics", methods=["GET"])
+def model_metrics():
+    try:
+
+        metrics = {
+            "algorithm": "Logistic Regression",
+            "accuracy": 0.732,
+            "precision": 0.762,
+            "recall": 0.673,
+            "f1_score": 0.715,
+            "roc_auc": 0.796,
+            "confusion_matrix": {
+                "tn": 5527,
+                "fp": 1464,
+                "fn": 2280,
+                "tp": 4694
+            }
+        }
+
+        return jsonify(metrics), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == "__main__":
     app.run(debug=True)
