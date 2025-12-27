@@ -92,7 +92,6 @@ http://127.0.0.1:5000
 
 ### 🔹 2. Frontend (React + Tailwind CSS)
 ```
-Copy code
 cd frontend
 npm install
 npm run dev
